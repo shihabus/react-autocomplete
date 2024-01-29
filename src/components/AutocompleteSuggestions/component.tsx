@@ -10,5 +10,5 @@ export default function AutocompleteSuggestions({
     label,
     ...inputProps
 }: AutocompleteSuggestions) {
-    return <li {...inputProps}>{label}</li>
+    return <li {...inputProps} dangerouslySetInnerHTML={{ __html: label }}></li>
 }
