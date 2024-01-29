@@ -1,20 +1,33 @@
 import { useEffect, useState } from 'react'
 import { fetchCountries } from '../../utils/fetchCountries'
+import { highlightSearchPattern } from '../../utils/highlightSearchPattern'
 
-export default function useAutoComplete() {
+type useAutoComplete = {
+    searchText: string
+}
+
+export default function useAutoComplete({ searchText }: useAutoComplete) {
     const [suggestion, setSuggestions] = useState<string[]>([])
-    const [searchText, setSearchText] = useState('')
+    // const [searchText, setSearchText] = useState('')
 
-    useEffect(() => {
+    async function getCountries(searchText: string) {
         if (searchText.trim().length > 0) {
-            fetchCountries(searchText).then((result) => setSuggestions(result))
+            const results = await fetchCountries(searchText)
+            const _suggestions = results.map((result) =>
+                highlightSearchPattern(searchText, result)
+            )
+            setSuggestions(_suggestions)
         } else {
             setSuggestions([])
         }
+    }
+
+    useEffect(() => {
+        getCountries(searchText)
     }, [searchText])
 
     return {
         suggestion,
-        setSearchText,
+        // setSearchText,
     }
 }
