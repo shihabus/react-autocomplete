@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
-import { fetchCountries } from '../../utils/fetchCountries'
+import {
+    fetchCountries,
+    // fetchCountriesFromApi,
+} from '../../utils/fetchCountries'
 import { highlightSearchPattern } from '../../utils/highlightSearchPattern'
+import { useDebounce } from '../useDebounce'
 
 type useAutoComplete = {
     searchText: string
@@ -8,13 +12,13 @@ type useAutoComplete = {
 
 export default function useAutoComplete({ searchText }: useAutoComplete) {
     const [suggestion, setSuggestions] = useState<string[]>([])
-    // const [searchText, setSearchText] = useState('')
+    const debouncedValue = useDebounce(searchText, 500)
 
-    async function getCountries(searchText: string) {
-        if (searchText.trim().length > 0) {
-            const results = await fetchCountries(searchText)
+    async function getCountries(searchStr: string) {
+        if (searchStr.trim().length > 0) {
+            const results = await fetchCountries(searchStr)
             const _suggestions = results.map((result) =>
-                highlightSearchPattern(searchText, result)
+                highlightSearchPattern(searchStr, result)
             )
             setSuggestions(_suggestions)
         } else {
@@ -23,11 +27,10 @@ export default function useAutoComplete({ searchText }: useAutoComplete) {
     }
 
     useEffect(() => {
-        getCountries(searchText)
-    }, [searchText])
+        getCountries(debouncedValue)
+    }, [debouncedValue, searchText])
 
     return {
         suggestion,
-        // setSearchText,
     }
 }
