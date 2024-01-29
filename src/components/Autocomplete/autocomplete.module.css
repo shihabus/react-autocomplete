@@ -1,0 +1,12 @@
+.container {
+    width: 400px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul > li:not(:last-child) {
+    margin-block: 1px;
+    border-bottom: 1px solid black;
+}

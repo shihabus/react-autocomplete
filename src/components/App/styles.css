@@ -1,0 +1,13 @@
+.container {
+    background-color: aqua;
+
+    height: 100%;
+    max-width: 80vw;
+    margin-inline: auto;
+    padding-block: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

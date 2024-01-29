@@ -1,0 +1,11 @@
+.input {
+    width: 100%;
+    line-height: 1.5rem;
+    padding-inline: 0.4rem;
+}
+
+.label {
+    font-size: small;
+    font-weight: 500;
+    color: black;
+}
