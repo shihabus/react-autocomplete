@@ -11,6 +11,10 @@ const suggestions = ['apple', 'carrot', 'beans'].map((val) => ({
 }))
 
 describe('AutocompleteSuggestions', () => {
+    it('should render', () => {
+        render(<AutocompleteSuggestions />, {})
+    })
+
     it('should render suggestions', () => {
         render(<AutocompleteSuggestions />, {
             store: {

@@ -11,7 +11,7 @@ type contextType = {
 }
 
 type customRenderType = {
-    store: contextType
+    store?: contextType
     options?: Omit<RenderOptions, 'wrapper'>
 }
 

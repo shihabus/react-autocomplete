@@ -28,6 +28,7 @@ function AutocompleteInput({ label, ...props }: AutocompleteInput) {
                 className={styles.input}
                 onChange={handleChange}
                 value={searchStr}
+                placeholder="Enter country name"
                 {...props}
             />
         </form>
