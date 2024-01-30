@@ -13,6 +13,11 @@ type useAutoComplete = {
     }
 }
 
+// TODO:
+// can make useAutocomplete more generic and configurable
+// with more props and methods
+// refer https://mui.com/base-ui/react-autocomplete/hooks-api/ for example
+
 export default function useAutoComplete({
     fetchSuggestions,
     options,

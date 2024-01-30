@@ -1,21 +1,20 @@
 import React from 'react'
 
 import styles from './AutocompleteInput.module.css'
+import { useCountrySearchContext } from '../../context/countrySearchContext'
 
 type AutocompleteInput = {
     label: string
-    inputValue: string
-    handleInputChange: (event: React.FormEvent<HTMLInputElement>) => void
 }
 
 // TODO
 // can have props getters for styles and attributes
-function AutocompleteInput({
-    label,
-    handleInputChange,
-    inputValue,
-    ...props
-}: AutocompleteInput) {
+function AutocompleteInput({ label, ...props }: AutocompleteInput) {
+    const { onChangeHandler, searchStr } = useCountrySearchContext()
+
+    const handleChange = async (e: React.FormEvent<HTMLInputElement>) => {
+        onChangeHandler(e.currentTarget.value)
+    }
     return (
         <form onSubmit={(event) => event.preventDefault()}>
             <label htmlFor="search-text" className={styles.label}>
@@ -27,8 +26,8 @@ function AutocompleteInput({
                 id="search-text"
                 autoComplete="off"
                 className={styles.input}
-                onChange={handleInputChange}
-                value={inputValue}
+                onChange={handleChange}
+                value={searchStr}
                 {...props}
             />
         </form>

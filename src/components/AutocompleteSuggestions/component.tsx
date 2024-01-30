@@ -1,26 +1,30 @@
 import React from 'react'
 
 import './AutocompleteSuggestions.module.css'
-
-type AutocompleteSuggestions = {
-    suggestion: { label: string; value: string }
-    onClick?: (event: React.MouseEvent<HTMLElement>) => void
-}
+import { useCountrySearchContext } from '../../context/countrySearchContext'
 
 // TODO:
 // sanitize the html before injecting it into DOM
 // using dangerouslySetInnerHTML
 // can use DOMPurify
-function AutocompleteSuggestions({
-    suggestion,
-    ...inputProps
-}: AutocompleteSuggestions) {
+function AutocompleteSuggestions({ ...props }) {
+    const { suggestions, makeSelection } = useCountrySearchContext()
+    function handleSelection(event: React.MouseEvent<HTMLElement>) {
+        const selectedValue: string = event.currentTarget.dataset.value || ''
+        makeSelection(selectedValue)
+    }
     return (
-        <li
-            {...inputProps}
-            dangerouslySetInnerHTML={{ __html: suggestion.label }}
-            data-value={suggestion.value}
-        ></li>
+        <ul>
+            {suggestions.map((suggestion) => (
+                <li
+                    key={suggestion.value}
+                    onClick={handleSelection}
+                    dangerouslySetInnerHTML={{ __html: suggestion.label }}
+                    {...props}
+                    data-value={suggestion.value}
+                ></li>
+            ))}
+        </ul>
     )
 }
 
