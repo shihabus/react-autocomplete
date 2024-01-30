@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Autocomplete using React and Typescript
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+
+## Local setup
+
+1. Clone/download the repository from GitHub `https://github.com/shihabus/react-autocomplete`
+2. Make sure you have npm installed on your machine
+3. Run `npm install` from project root to install the dependencies
 
 ## Available Scripts
 
@@ -54,18 +60,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Libraries used
 
-### Prettier
+| Library     | Use                                                          |
+| ----------  | ------------------------------------------------------------ |
+| Prettier    | Code formatting                                              |
+| ESLint      | Linting                                                      |
+| Husky       | Commit hooks                                                 |
+| Lint staged | To run linters against staged git files                      |
+| React       | UI library                                                   |
 
-Code formatting
-
-### ESLint
-
-Linting
-
-### Husky
-
-Commit hooks
-
-### Lint staged
-
-To run linters against staged git files
