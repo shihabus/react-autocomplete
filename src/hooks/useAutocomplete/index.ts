@@ -5,7 +5,7 @@ import { debounce } from '../../utils/debounce'
 
 type useAutoComplete = {
     fetchSuggestions: (searchKey: string) => Promise<string[]>
-    options: {
+    options?: {
         minSearchChars?: number
         suggestionsMaxLen?: number
         autoHighlight?: boolean
@@ -27,11 +27,11 @@ export default function useAutoComplete({
     const getSuggestions = useCallback(async () => {
         const results = await fetchSuggestions(ref.current)
 
-        if (results.length < 1) {
+        if (results?.length < 1) {
             setError(`No matching results found for "${ref.current}"`)
         }
         const _suggestions = results
-            .map((result) => ({
+            ?.map((result) => ({
                 label: options?.autoHighlight
                     ? highlightSearchPattern(ref.current, result)
                     : result,
