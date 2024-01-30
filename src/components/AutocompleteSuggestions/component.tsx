@@ -1,14 +1,20 @@
 import React from 'react'
-import './styles.css'
+import './AutocompleteSuggestions.module.css'
 
 type AutocompleteSuggestions = {
-    label: string
+    suggestion: { label: string; value: string }
     onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
 export default function AutocompleteSuggestions({
-    label,
+    suggestion,
     ...inputProps
 }: AutocompleteSuggestions) {
-    return <li {...inputProps} dangerouslySetInnerHTML={{ __html: label }}></li>
+    return (
+        <li
+            {...inputProps}
+            dangerouslySetInnerHTML={{ __html: suggestion.label }}
+            data-value={suggestion.value}
+        ></li>
+    )
 }

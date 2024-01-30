@@ -7,11 +7,15 @@ import AutocompleteSuggestions from '../AutocompleteSuggestions'
 function App() {
     return (
         <div className="container">
-            <Autocomplete
-                renderInput={(suggestion) => (
-                    <AutocompleteSuggestions label={suggestion} />
+            <Autocomplete>
+                {(suggestion, props) => (
+                    <AutocompleteSuggestions
+                        key={suggestion.value}
+                        {...props}
+                        suggestion={suggestion}
+                    />
                 )}
-            />
+            </Autocomplete>
         </div>
     )
 }
