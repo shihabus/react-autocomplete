@@ -37,7 +37,6 @@ export async function fetchCountriesFromApi(searchStr: string) {
 
         return countries?.map((country) => country.name.official)
     } catch (error) {
-        console.error(error)
         return []
     }
 }
