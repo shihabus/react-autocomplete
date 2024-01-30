@@ -57,4 +57,4 @@ function useCountrySearchContext() {
 
 export default CountrySearchContextProvider
 
-export { useCountrySearchContext }
+export { useCountrySearchContext, CountrySearchContext }

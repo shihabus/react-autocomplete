@@ -20,6 +20,7 @@ function AutocompleteSuggestions({ ...props }) {
                     key={suggestion.value}
                     onClick={handleSelection}
                     dangerouslySetInnerHTML={{ __html: suggestion.label }}
+                    aria-label="suggestion"
                     {...props}
                     data-value={suggestion.value}
                 ></li>
