@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './AutocompleteInput.module.css'
-import { useCountrySearchContext } from '../../context/countrySearchContext'
+import { useCountrySearchContext } from '../../context/CountrySearch'
 
 type AutocompleteInput = {
     label: string

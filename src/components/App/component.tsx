@@ -5,7 +5,7 @@ import React from 'react'
 import Autocomplete from '../Autocomplete'
 
 import styles from './App.module.css'
-import CountrySearchContextProvider from '../../context/countrySearchContext'
+import CountrySearchContextProvider from '../../context/CountrySearch'
 
 function App() {
     return (

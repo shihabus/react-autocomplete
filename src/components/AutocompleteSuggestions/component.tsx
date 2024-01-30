@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './AutocompleteSuggestions.module.css'
-import { useCountrySearchContext } from '../../context/countrySearchContext'
+import { useCountrySearchContext } from '../../context/CountrySearch'
 
 // TODO:
 // sanitize the html before injecting it into DOM

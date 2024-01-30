@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import { render, RenderOptions } from '@testing-library/react'
-import { CountrySearchContext } from '../context/countrySearchContext'
+import { CountrySearchContext } from '../context/CountrySearch'
 
 type contextType = {
     onChangeHandler?: (txt: string) => void
@@ -11,15 +11,15 @@ type contextType = {
 }
 
 type customRenderType = {
-    store?: contextType
+    contextProps?: contextType
     options?: Omit<RenderOptions, 'wrapper'>
 }
 
 const customRender = (
     ui: ReactElement,
-    { store, ...options }: customRenderType
+    { contextProps, ...options }: customRenderType
 ) => {
-    const defaultStore = {
+    const defaultContext = {
         onChangeHandler: () => null,
         searchStr: '',
         suggestions: [],
@@ -29,7 +29,7 @@ const customRender = (
     const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
         return (
             <CountrySearchContext.Provider
-                value={{ ...defaultStore, ...store }}
+                value={{ ...defaultContext, ...contextProps }}
             >
                 {children}
             </CountrySearchContext.Provider>

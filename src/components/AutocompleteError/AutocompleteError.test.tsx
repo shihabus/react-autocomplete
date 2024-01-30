@@ -11,7 +11,7 @@ describe('AutocompleteError', () => {
 
     it('should display error text', () => {
         render(<AutocompleteError />, {
-            store: { error: 'something went wrong' },
+            contextProps: { error: 'something went wrong' },
         })
 
         const error = screen.getByLabelText('error-text')

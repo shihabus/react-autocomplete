@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './AutocompleteError.module.css'
-import { useCountrySearchContext } from '../../context/countrySearchContext'
+import { useCountrySearchContext } from '../../context/CountrySearch'
 
 function AutocompleteError({ ...props }) {
     const { error } = useCountrySearchContext()

@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
 ## Available Scripts
 
@@ -39,8 +39,33 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Folder structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| directory  | description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| components | For all UI components. All the relevant files are kept here. |
+| constants  | Constant config                                              |
+| context    | React contexts go in here                                    |
+| data       | Mock data                                                    |
+| hooks      | All the React hooks are in here                              |
+| test       | Test utils and setup                                         |
+| utils      | For common utils                                             |
+
+## Libraries used
+
+### Prettier
+
+Code formatting
+
+### ESLint
+
+Linting
+
+### Husky
+
+Commit hooks
+
+### Lint staged
+
+To run linters against staged git files

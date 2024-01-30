@@ -17,7 +17,7 @@ describe('AutocompleteSuggestions', () => {
 
     it('should render suggestions', () => {
         render(<AutocompleteSuggestions />, {
-            store: {
+            contextProps: {
                 suggestions,
                 makeSelection: mockMakeSelection,
             },
@@ -28,7 +28,7 @@ describe('AutocompleteSuggestions', () => {
 
     it('should trigger onclick handler', async () => {
         render(<AutocompleteSuggestions />, {
-            store: {
+            contextProps: {
                 suggestions,
                 makeSelection: mockMakeSelection,
             },
@@ -41,7 +41,7 @@ describe('AutocompleteSuggestions', () => {
 
     it('should trigger makeSelection with selection onclick', async () => {
         render(<AutocompleteSuggestions />, {
-            store: {
+            contextProps: {
                 suggestions,
                 makeSelection: mockMakeSelection,
             },

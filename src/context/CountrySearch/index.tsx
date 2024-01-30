@@ -1,6 +1,9 @@
 import React, { createContext, useContext } from 'react'
 import useAutoComplete from '../../hooks/useAutocomplete'
-import { fetchCountries } from '../../utils/fetchCountries'
+import {
+    fetchCountries,
+    // fetchCountriesFromApi,
+} from '../../utils/fetchCountries'
 
 type CountrySearchContextType = null | {
     searchStr: string

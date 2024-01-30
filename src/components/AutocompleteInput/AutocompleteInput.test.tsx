@@ -19,7 +19,7 @@ describe('AutocompleteInput', () => {
 
     it('should trigger onChangeHandler', async () => {
         render(<AutocompleteInput label="test label" />, {
-            store: { onChangeHandler: mockOnChangeHandler },
+            contextProps: { onChangeHandler: mockOnChangeHandler },
         })
         const searchInput = screen.getByPlaceholderText(/enter country name/i)
         await userEvent.type(searchInput, 'russia')
@@ -28,7 +28,7 @@ describe('AutocompleteInput', () => {
 
     it('should set value', async () => {
         render(<AutocompleteInput label="test label" />, {
-            store: { searchStr: 'sample text' },
+            contextProps: { searchStr: 'sample text' },
         })
         const searchInput =
             screen.getByPlaceholderText<HTMLInputElement>(/enter country name/i)
