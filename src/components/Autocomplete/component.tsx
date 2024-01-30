@@ -16,8 +16,12 @@ type AutocompleteProps = {
     ) => React.JSX.Element
 }
 
+// TODO:
+// can make useAutocomplete more generic and configurable
+// with more props and methods
+// refer https://mui.com/base-ui/react-autocomplete/hooks-api/ for example
 function Autocomplete({ children }: AutocompleteProps) {
-    const { onChangeHandler, searchStr, suggestions, makeSelection } =
+    const { onChangeHandler, searchStr, suggestions, makeSelection, error } =
         useAutoComplete({
             fetchSuggestions: fetchCountriesFromApi,
             options: {
@@ -54,6 +58,7 @@ function Autocomplete({ children }: AutocompleteProps) {
                     children(suggestion, suggestionProps)
                 )}
             </ul>
+            {error && <p className={styles.error}>{error}</p>}
         </div>
     )
 }

@@ -18,6 +18,7 @@ export default function useAutoComplete({
     options,
 }: useAutoComplete) {
     const [searchStr, setSearchStr] = useState('')
+    const [error, setError] = useState('')
     const [suggestions, setSuggestions] = useState<
         { label: string; value: string }[]
     >([])
@@ -25,6 +26,10 @@ export default function useAutoComplete({
 
     const getSuggestions = useCallback(async () => {
         const results = await fetchSuggestions(ref.current)
+
+        if (results.length < 1) {
+            setError(`No matching results found for "${ref.current}"`)
+        }
         const _suggestions = results
             .map((result) => ({
                 label: options?.autoHighlight
@@ -43,6 +48,7 @@ export default function useAutoComplete({
     const onChangeHandler = (str: string) => {
         const inputStr = str.trimStart()
         setSearchStr(inputStr)
+        setError('')
         // to circumvent stale state value
         ref.current = inputStr
         if (ref.current?.length >= (options?.minSearchChars ?? 1)) {
@@ -62,5 +68,6 @@ export default function useAutoComplete({
         searchStr,
         suggestions,
         makeSelection,
+        error,
     }
 }

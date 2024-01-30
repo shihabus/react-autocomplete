@@ -8,13 +8,16 @@ type AutocompleteInput = {
     handleInputChange: (event: React.FormEvent<HTMLInputElement>) => void
 }
 
+// TODO
+// can have props getters for styles and attributes
 function AutocompleteInput({
     label,
     handleInputChange,
     inputValue,
+    ...props
 }: AutocompleteInput) {
     return (
-        <form action="javascript:void(0);">
+        <form>
             <label htmlFor="search-text" className={styles.label}>
                 {label}
             </label>
@@ -26,6 +29,7 @@ function AutocompleteInput({
                 className={styles.input}
                 onChange={handleInputChange}
                 value={inputValue}
+                {...props}
             />
         </form>
     )

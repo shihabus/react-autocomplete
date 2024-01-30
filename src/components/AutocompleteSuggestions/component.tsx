@@ -7,6 +7,10 @@ type AutocompleteSuggestions = {
     onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
+// TODO:
+// sanitize the html before injecting it into DOM
+// using dangerouslySetInnerHTML
+// can use DOMPurify
 function AutocompleteSuggestions({
     suggestion,
     ...inputProps

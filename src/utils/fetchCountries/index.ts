@@ -1,4 +1,5 @@
 import data from '../../data/countryList.json'
+import { routes } from '../../constants/apiRoutes'
 
 export function fetchCountries(matchString: string): Promise<string[]> {
     return new Promise((resolve) => {
@@ -13,11 +14,16 @@ export function fetchCountries(matchString: string): Promise<string[]> {
     })
 }
 
+// GOTCHA
+// API return countries official and common name.
+// At time we might see suggestion not relevant to search
+// coz of this
+
+// TODO:
+// show relevant error in UI
 export async function fetchCountriesFromApi(searchStr: string) {
     try {
-        const response = await fetch(
-            `https://restcountries.com/v3.1/name/${searchStr}`
-        )
+        const response = await fetch(routes.restCountries(searchStr))
 
         if (!response.ok) {
             throw new Error(`${response.status} ${response.statusText}`)
