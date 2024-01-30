@@ -7,7 +7,7 @@ import { render } from '../../test/test-util'
 const mockOnChangeHandler = jest.fn()
 
 describe('AutocompleteInput', () => {
-    it('should render', () => {
+    it('should render the component', () => {
         render(<AutocompleteInput label="" />, {})
     })
 

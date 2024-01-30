@@ -7,7 +7,7 @@ function AutocompleteError({ ...props }) {
     const { error } = useCountrySearchContext()
     if (error) {
         return (
-            <p className={styles.error} {...props}>
+            <p aria-label="error-text" className={styles.error} {...props}>
                 {error}
             </p>
         )

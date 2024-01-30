@@ -11,7 +11,7 @@ const suggestions = ['apple', 'carrot', 'beans'].map((val) => ({
 }))
 
 describe('AutocompleteSuggestions', () => {
-    it('should render', () => {
+    it('should render the component', () => {
         render(<AutocompleteSuggestions />, {})
     })
 
