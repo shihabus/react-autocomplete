@@ -1,12 +1,13 @@
 import React from 'react'
 
-import './styles.css'
 import Autocomplete from '../Autocomplete'
 import AutocompleteSuggestions from '../AutocompleteSuggestions'
 
+import styles from './App.module.css'
+
 function App() {
     return (
-        <div className="container">
+        <div className={styles.container}>
             <Autocomplete>
                 {(suggestion, props) => (
                     <AutocompleteSuggestions

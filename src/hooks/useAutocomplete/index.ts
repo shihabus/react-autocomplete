@@ -1,6 +1,7 @@
 import { useState, useRef, useMemo, useCallback } from 'react'
+
 import { highlightSearchPattern } from '../../utils/highlightSearchPattern'
-import debounce from '../../utils/debounce'
+import { debounce } from '../../utils/debounce'
 
 type useAutoComplete = {
     fetchSuggestions: (searchKey: string) => Promise<string[]>

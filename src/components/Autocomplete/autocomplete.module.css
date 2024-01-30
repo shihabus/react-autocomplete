@@ -1,5 +1,5 @@
 .container {
-    width: 400px;
+    width: 25rem;
 }
 
 ul {
@@ -9,4 +9,9 @@ ul {
 ul > li:not(:last-child) {
     margin-block: 1px;
     border-bottom: 1px solid black;
+}
+
+ul > li:last-child {
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
 }

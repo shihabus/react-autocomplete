@@ -1,11 +1,13 @@
 import React from 'react'
+
 import AutocompleteInput from '../AutocompleteInput'
-import styles from './autocomplete.module.css'
 import useAutoComplete from '../../hooks/useAutocomplete'
 import {
     // fetchCountries,
     fetchCountriesFromApi,
 } from '../../utils/fetchCountries'
+
+import styles from './Autocomplete.module.css'
 
 type AutocompleteProps = {
     children: (

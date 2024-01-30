@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './autocomplete-input.module.css'
+
+import styles from './AutocompleteInput.module.css'
 
 type AutocompleteInput = {
     label: string
@@ -7,7 +8,7 @@ type AutocompleteInput = {
     handleInputChange: (event: React.FormEvent<HTMLInputElement>) => void
 }
 
-export default function AutocompleteInput({
+function AutocompleteInput({
     label,
     handleInputChange,
     inputValue,
@@ -29,3 +30,5 @@ export default function AutocompleteInput({
         </form>
     )
 }
+
+export { AutocompleteInput }

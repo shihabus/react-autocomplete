@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './AutocompleteSuggestions.module.css'
 
 type AutocompleteSuggestions = {
@@ -6,7 +7,7 @@ type AutocompleteSuggestions = {
     onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export default function AutocompleteSuggestions({
+function AutocompleteSuggestions({
     suggestion,
     ...inputProps
 }: AutocompleteSuggestions) {
@@ -18,3 +19,5 @@ export default function AutocompleteSuggestions({
         ></li>
     )
 }
+
+export { AutocompleteSuggestions }

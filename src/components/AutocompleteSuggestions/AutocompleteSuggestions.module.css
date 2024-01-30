@@ -1,8 +1,10 @@
 li {
-    background-color: lightblue;
-    padding: 4px;
+    background-color: #d1eaf8;
+    padding: 0.2rem;
+
+    cursor: pointer;
 }
 
 li:hover {
-    background-color: aquamarine;
+    background-color: #90cdf8;
 }
