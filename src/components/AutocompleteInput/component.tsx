@@ -17,7 +17,7 @@ function AutocompleteInput({
     ...props
 }: AutocompleteInput) {
     return (
-        <form>
+        <form onSubmit={(event) => event.preventDefault()}>
             <label htmlFor="search-text" className={styles.label}>
                 {label}
             </label>
