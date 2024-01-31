@@ -5,6 +5,7 @@
 3. Make useAutocomplete hook more extensible with props and methods
 4. API error handling
 5. Style config
+6. Close suggestions list if input loose focus
 
 # Assumptions
 

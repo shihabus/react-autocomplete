@@ -55,6 +55,7 @@ export default function useAutoComplete({
         setSearchStr(inputStr)
         setError('')
         // to circumvent stale state value
+        // and avoid passing searchStr to useCallback dep array
         ref.current = inputStr
         if (ref.current?.length >= (options?.minSearchChars ?? 1)) {
             debouncedSendRequest()
