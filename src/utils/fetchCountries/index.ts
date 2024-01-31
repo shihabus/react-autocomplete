@@ -10,6 +10,7 @@ export function fetchCountries(matchString: string): Promise<string[]> {
                 new RegExp(matchString, 'gi').test(listItem)
             )
         }
+        // to simulate asynchrony
         setTimeout(() => resolve(suggestions), 300)
     })
 }

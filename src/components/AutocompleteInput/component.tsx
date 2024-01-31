@@ -1,6 +1,7 @@
 import React from 'react'
 
 import styles from './AutocompleteInput.module.css'
+
 import { useCountrySearchContext } from '../../context/CountrySearch'
 
 type AutocompleteInput = {
@@ -28,7 +29,7 @@ function AutocompleteInput({ label, ...props }: AutocompleteInput) {
                 className={styles.input}
                 onChange={handleChange}
                 value={searchStr}
-                placeholder="Enter country name"
+                placeholder="Enter country name (min 3 letters)"
                 {...props}
             />
         </form>

@@ -4,8 +4,12 @@
     padding-inline: 0.4rem;
 }
 
+.input::placeholder{
+    font-style: italic;
+}
+
 .label {
-    font-size: small;
-    font-weight: 500;
+    font-size: large;
+    font-weight: bolder;
     color: black;
 }

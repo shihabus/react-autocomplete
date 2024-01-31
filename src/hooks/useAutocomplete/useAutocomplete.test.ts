@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react'
-import useAutoComplete from '.'
 import { act } from 'react-dom/test-utils'
+
+import useAutoComplete from '.'
 
 beforeEach(() => {
     jest.useFakeTimers()

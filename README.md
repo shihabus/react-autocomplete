@@ -54,6 +54,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 | constants  | Constant config                                              |
 | context    | React contexts go in here                                    |
 | data       | Mock data                                                    |
+| feature    | All the feature related files                                |
 | hooks      | All the React hooks are in here                              |
 | test       | Test utils and setup                                         |
 | utils      | For common utils                                             |

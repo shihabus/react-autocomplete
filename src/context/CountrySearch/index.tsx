@@ -1,4 +1,5 @@
 import React, { createContext, useContext } from 'react'
+
 import useAutoComplete from '../../hooks/useAutocomplete'
 import {
     fetchCountries,
@@ -29,6 +30,8 @@ function CountrySearchContextProvider({
                 autoHighlight: true,
                 debounceDelay: 300,
             },
+            // to use API to fetch, replace
+            // fetchCountries with fetchCountriesFromApi
             fetchSuggestions: fetchCountries,
         })
     return (

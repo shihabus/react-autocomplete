@@ -1,6 +1,7 @@
 import React from 'react'
 
-import './AutocompleteSuggestions.module.css'
+import styles from './AutocompleteSuggestions.module.css'
+
 import { useCountrySearchContext } from '../../context/CountrySearch'
 
 // TODO:
@@ -18,11 +19,12 @@ function AutocompleteSuggestions({ ...props }) {
             {suggestions.map((suggestion) => (
                 <li
                     key={suggestion.value}
+                    className={styles.suggestion}
                     onClick={handleSelection}
-                    dangerouslySetInnerHTML={{ __html: suggestion.label }}
                     aria-label="suggestion"
                     {...props}
                     data-value={suggestion.value}
+                    dangerouslySetInnerHTML={{ __html: suggestion.label }}
                 ></li>
             ))}
         </ul>
